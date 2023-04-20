@@ -7,30 +7,23 @@
     <meta name="viewport" content="width=h, initial-scale=1.0">
     <title>Checkerboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-   
 </head>
 
 <body>
     <div class="container">
         <h1 style="margin: 0 auto;color: {{col1}};background-color: {{col2}};width:360px;text-align: center;">*** Checkerboard ***</h1>
-        
-                       
             {% for x in range(row): %}
             <div class="row">
                 {%for y in range(column): %}
                    {% if (x+y) % 2 == 0 %}
-                      <!-- <span>orange</span> -->
                       <div class="square" style="background-color: {{col1}};"></div>
                    {%else%}
-                      <!-- <span>noir</span> -->
                       <div class="square" style="background-color: {{col2}};"></div>
                    {%endif%}
                 {% endfor %}
             </div>
             {% endfor %}
-        
     </div>
-
 </body>
 
 </html>
